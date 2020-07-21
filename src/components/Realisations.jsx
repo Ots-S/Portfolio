@@ -20,22 +20,20 @@ const useStyles = makeStyles(theme => ({
 export default function Realisations() {
   const classes = useStyles();
   return (
-    <Box py={5}>
-      <Grid container justify="space-around" className={classes.container}>
-        <Grid>
-          <ProjectCard image={image} title="Serjee" content="front-end" />
-        </Grid>
-        <Grid>
-          <ProjectCard
-            image={image}
-            title="Lekol"
-            content="front-end / back-end"
-          />
-        </Grid>
-        <Grid>
-          <ProjectCard image={image} title="Serjee" content="front-end" />
-        </Grid>
+    <Grid container justify="space-between" className={classes.container}>
+      <Grid item lg={4}>
+        <ProjectCard image={image} title="Serjee" content="front-end" />
       </Grid>
-    </Box>
+      <Grid item lg={4}>
+        <ProjectCard
+          image={image}
+          title="Lekol"
+          content="front-end / back-end"
+        />
+      </Grid>
+      <Grid item lg={4}>
+        <ProjectCard image={image} title="Serjee" content="front-end" />
+      </Grid>
+    </Grid>
   );
 }

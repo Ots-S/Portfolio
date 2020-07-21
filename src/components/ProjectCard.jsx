@@ -7,7 +7,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import image from "../assets/portfolio-wallpaper.jpg";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,14 +15,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ProjectCard() {
+export default function ProjectCard(props) {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardHeader title="Serjee" />
-      <CardMedia component="img" image={image} />
+      <CardHeader title={props.title} />
+      <CardMedia component="img" image={props.image} />
       <CardContent>
-        <Typography>Front-End</Typography>
+        <Typography>{props.content}</Typography>
       </CardContent>
     </Card>
   );
