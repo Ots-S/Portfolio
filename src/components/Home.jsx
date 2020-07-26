@@ -11,7 +11,7 @@ function Home() {
       direction="column"
       justify="center"
       alignItems="center"
-      lg={12}
+      lg={10}
     >
       <Grid item>
         <Introduction />
