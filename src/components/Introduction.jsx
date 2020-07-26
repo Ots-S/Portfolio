@@ -16,8 +16,8 @@ const useStyles = makeStyles(theme => ({
 function Introduction() {
   const classes = useStyles();
   return (
-    <Grid container item direction="column">
-      <Box pt={10}>
+    <Grid container justify="center" item direction="column">
+      <Box pt={10} pl={1}>
         <Typography variant="h3" className={classes.title}>
           Sébastien Ots
         </Typography>

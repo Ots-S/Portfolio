@@ -20,11 +20,10 @@ export default function AboutMe() {
 
   return (
     <Grid container direction="column" className={classes.container}>
-      <Box py={5}>
+      <Box py={5} pl={1}>
         <Typography className={classes.typography}>
           Passionné par le développement Web, j'ai décidé de me réorienter
           professionnellement dans ce domaine.
-          <br />
           <br />
           Actuellement en stage au sein de la Start-Up Serjee, je développe leur
           application web.
