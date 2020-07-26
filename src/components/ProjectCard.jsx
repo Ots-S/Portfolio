@@ -16,7 +16,6 @@ import {
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import { makeStyles } from "@material-ui/core/styles";
-import loginScreen from "../assets/projects/serjee/home.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -100,11 +99,7 @@ export default function ProjectCard(props) {
           </Button>
           <Dialog open={open} onClose={() => setOpen(false)} maxWidth="md">
             <Paper>
-              <CardMedia
-                component="img"
-                image={loginScreen}
-                className={classes.screenshot}
-              />
+              <CardMedia component="img" className={classes.screenshot} />
               <CardActions disableSpacing className={classes.iconRight}>
                 <IconButton aria-label="add to favorites">
                   <NavigateNextIcon />
