@@ -1,24 +1,24 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Fade } from "@material-ui/core";
 import Introduction from "./Introduction";
 import AboutMe from "./AboutMe";
 import Realisations from "./Realisations";
 
 function Home() {
   return (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      lg={10}
-    >
-      <Grid item>
+    <Fade in={true} timeout={800}>
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        lg={12}
+      >
         <Introduction />
         <AboutMe />
         <Realisations />
       </Grid>
-    </Grid>
+    </Fade>
   );
 }
 

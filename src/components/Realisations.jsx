@@ -20,19 +20,28 @@ const useStyles = makeStyles(theme => ({
 export default function Realisations() {
   const classes = useStyles();
   return (
-    <Grid container justify="center" className={classes.container}>
+    <Grid
+      container
+      justify="space-around"
+      className={classes.container}
+      lg={10}
+      spacing={1}
+    >
       <Grid item lg={4}>
-        <ProjectCard image={image} title="Serjee" content="front-end" />
+        <ProjectCard
+          image={image}
+          title="SERJEE"
+          techno={"REACT JS"}
+          content="front-end"
+        />
       </Grid>
       <Grid item lg={4}>
         <ProjectCard
           image={image}
-          title="Lekol"
+          title="LEKOL"
+          techno={"THYMELEAF / JAVA SPRING"}
           content="front-end / back-end"
         />
-      </Grid>
-      <Grid item lg={4}>
-        <ProjectCard image={image} title="Serjee" content="front-end" />
       </Grid>
     </Grid>
   );
