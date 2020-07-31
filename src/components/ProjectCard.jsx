@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
-  CardHeader,
   CardMedia,
-  CardContent,
   Grid,
   Typography,
   Button,
@@ -12,6 +10,7 @@ import {
   Paper,
   CardActions,
   IconButton,
+  Box,
 } from "@material-ui/core";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
@@ -34,14 +33,14 @@ const useStyles = makeStyles(theme => ({
   typography: {
     color: "white",
     "&:hover": {
-      backgroundColor: "#1E90FF",
+      backgroundColor: "#115293",
     },
   },
   button: {
-    color: "#1E90FF",
+    color: "#1976d2",
     "&:hover": {
       color: "white",
-      backgroundColor: "#1E90FF",
+      backgroundColor: "#115293",
     },
   },
   screenshot: {
@@ -64,6 +63,35 @@ export default function ProjectCard(props) {
   const classes = useStyles();
   const [opacity, setOpacity] = useState(0);
   const [open, setOpen] = useState();
+  const [images, setImages] = useState([]);
+  const [lekolImages, setLekolImages] = useState([]);
+  const [image, setImage] = useState();
+
+  useEffect(() => {
+    setImages(props.images);
+  }, [props.images]);
+
+  useEffect(() => {
+    setImage(images[0]);
+  }, [open]);
+
+  function getNextImage() {
+    const totalImages = images.length;
+    if (images.indexOf(image) < totalImages - 1) {
+      setImage(images[images.indexOf(image) + 1]);
+    } else {
+      setImage(images[0]);
+    }
+  }
+
+  function getPrevImage() {
+    if (images.indexOf(image) > 0) {
+      setImage(images[images.indexOf(image) - 1]);
+    } else {
+      setImage(images[images.length - 1]);
+    }
+  }
+
   return (
     <Card className={classes.root}>
       <CardMedia
@@ -83,10 +111,10 @@ export default function ProjectCard(props) {
           direction="column"
         >
           <Grid item>
-            <Typography align="center" variant="h3">
+            <Typography align="center" variant="h3" color="primary">
               {props.title}
             </Typography>
-            <Typography color="primary" align="center" variant="h5">
+            <Typography align="center" variant="h5">
               {props.techno}
             </Typography>
           </Grid>
@@ -97,24 +125,43 @@ export default function ProjectCard(props) {
           >
             PLUS D'INFOS
           </Button>
-          <Dialog open={open} onClose={() => setOpen(false)} maxWidth="md">
+          <Dialog
+            open={open}
+            onClose={() => setOpen(false)}
+            maxWidth="md"
+            className={classes.modal}
+          >
             <Paper>
-              <CardMedia component="img" className={classes.screenshot} />
+              <Box mt={2} mx={10}>
+                <CardMedia
+                  component="img"
+                  image={image}
+                  className={classes.screenshot}
+                />
+              </Box>
               <CardActions disableSpacing className={classes.iconRight}>
-                <IconButton aria-label="add to favorites">
+                <IconButton
+                  aria-label="image suivante"
+                  onClick={() => getNextImage(props.title)}
+                >
                   <NavigateNextIcon />
                 </IconButton>
               </CardActions>
               <CardActions disableSpacing className={classes.iconLeft}>
-                <IconButton aria-label="add to favorites">
+                <IconButton
+                  aria-label="image précédente"
+                  onClick={() => getPrevImage()}
+                >
                   <NavigateBeforeIcon />
                 </IconButton>
               </CardActions>
-              <Typography align="center">Serjee</Typography>
-              <Typography>
-                Serjee est une application Web permettant de recevoir des
-                recommandations de bouteilles de vin.
-              </Typography>
+              <Box p={10}>
+                <Typography>{props.presentation}</Typography>
+                <Typography>
+                  Technologies utilisées :
+                  <Typography>{props.technologies}</Typography>
+                </Typography>
+              </Box>
             </Paper>
           </Dialog>
         </Grid>
