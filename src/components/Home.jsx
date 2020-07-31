@@ -1,8 +1,9 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Fade } from "@material-ui/core";
 import Introduction from "./Introduction";
-import AboutMe from "./AboutMe";
+import Footer from "./Footer";
 import Realisations from "./Realisations";
+import Technologies from "./Technologies";
 
 function Home() {
   return (
@@ -11,13 +12,12 @@ function Home() {
       direction="column"
       justify="center"
       alignItems="center"
-      lg={10}
+      lg={12}
     >
-      <Grid item>
-        <Introduction />
-        <AboutMe />
-        <Realisations />
-      </Grid>
+      <Introduction />
+      <Realisations />
+      <Technologies />
+      <Footer />
     </Grid>
   );
 }

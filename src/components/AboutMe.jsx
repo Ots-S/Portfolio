@@ -19,7 +19,7 @@ export default function AboutMe() {
   const classes = useStyles();
 
   return (
-    <Grid container direction="column" className={classes.container}>
+    <Grid container direction="column" className={classes.container} lg={10}>
       <Box py={5} pl={1}>
         <Typography className={classes.typography}>
           Passionné par le développement Web, j'ai décidé de me réorienter
