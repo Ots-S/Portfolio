@@ -98,7 +98,7 @@ export default function Realisations() {
             content="front-end"
             images={serjeeImages}
             presentation={
-              "Serjee est une application Web permettant de recevoir des recommandations de bouteilles de vin"
+              "Serjee est une application Web permettant de recevoir des recommandations de bouteilles de vin."
             }
             technologies={[
               "React",
@@ -109,8 +109,8 @@ export default function Realisations() {
             ]}
             realisations={[
               "Développement d'une application web dynamique et responsive",
-              "Reproduction graphique en suivant une maquette",
-              "Manipulation de données via des appels API",
+              "Développement d'interface à partir de maquettes",
+              "Manipulation de données via appels API",
             ]}
           />
         </Grid>
@@ -129,7 +129,7 @@ export default function Realisations() {
               "Spring",
               "Hibernate",
               "Thymeleaf",
-              "MySql",
+              "MySQL",
               "HTML & CSS",
             ]}
             realisations={[

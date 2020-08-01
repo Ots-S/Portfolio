@@ -1,24 +1,9 @@
 import React, { useState } from "react";
 import { Typography, Grid, Box, Fade } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import VisibilitySensor from "react-visibility-sensor";
 import TechnologyCard from "./TechnologyCard";
 
-const useStyles = makeStyles(theme => ({
-  title: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
-  },
-  subtitle: {
-    marginBottom: theme.spacing(4),
-  },
-  typography: {
-    fontSize: "1.5em",
-  },
-}));
-
 export default function Technology() {
-  const classes = useStyles();
   const [display, setDisplay] = useState(false);
   const [displayTechnos, setDisplayTechnos] = useState(false);
   const [technologies, setTechnologies] = useState([
