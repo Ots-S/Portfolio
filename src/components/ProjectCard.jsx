@@ -15,6 +15,11 @@ import {
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import { makeStyles } from "@material-ui/core/styles";
+import Slide from "@material-ui/core/Slide";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,15 +50,16 @@ const useStyles = makeStyles(theme => ({
   },
   screenshot: {
     position: "relative",
+    maxHeight: "24em",
   },
   iconRight: {
     position: "absolute",
-    top: "50%",
+    top: "25%",
     right: 0,
   },
   iconLeft: {
     position: "absolute",
-    top: "50%",
+    top: "25%",
     left: 0,
   },
   modal: {},
@@ -64,7 +70,6 @@ export default function ProjectCard(props) {
   const [opacity, setOpacity] = useState(0);
   const [open, setOpen] = useState();
   const [images, setImages] = useState([]);
-  const [lekolImages, setLekolImages] = useState([]);
   const [image, setImage] = useState();
 
   useEffect(() => {
@@ -127,6 +132,7 @@ export default function ProjectCard(props) {
           </Button>
           <Dialog
             open={open}
+            TransitionComponent={Transition}
             onClose={() => setOpen(false)}
             maxWidth="md"
             className={classes.modal}
@@ -157,10 +163,24 @@ export default function ProjectCard(props) {
               </CardActions>
               <Box p={10}>
                 <Typography>{props.presentation}</Typography>
-                <Typography>
-                  Technologies utilisées :
-                  <Typography>{props.technologies}</Typography>
-                </Typography>
+                <Box my={2}>
+                  <Typography color="primary" align="center">
+                    TECHNOLOGIES :
+                  </Typography>
+                </Box>
+                <Grid container item justify="space-around">
+                  {props.technologies.map(techno => (
+                    <Typography>{techno}</Typography>
+                  ))}
+                </Grid>
+                <Box my={2}>
+                  <Typography color="primary" align="center">
+                    RÉALISATIONS :
+                  </Typography>
+                </Box>
+                {props.realisations.map(realisation => (
+                  <Typography>{realisation}</Typography>
+                ))}
               </Box>
             </Paper>
           </Dialog>

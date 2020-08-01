@@ -13,10 +13,13 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "#166999",
     height: "100%",
     borderRadius: "inherit",
-    transition: "width 3s ease-in",
+    transition: "width 2s ease-in",
   },
   typo: {
     width: "10em",
+  },
+  typoLevel: {
+    marginRight: "1.5em",
   },
 }));
 
@@ -32,9 +35,14 @@ export default function ProgressBar(props) {
     <div className={classes.container}>
       <div className={classes.filler} style={{ width: completed }}>
         <Box ml={2}>
-          <Typography color="secondary" className={classes.typo}>
-            {props.technology}
-          </Typography>
+          <Grid container item justify="space-between">
+            <Typography color="secondary" className={classes.typo}>
+              {props.technology}
+            </Typography>
+            <Typography color="secondary" className={classes.typoLevel}>
+              {props.completed}
+            </Typography>
+          </Grid>
         </Box>
       </div>
     </div>

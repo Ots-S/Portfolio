@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Grid, Box, Fade, IconButton } from "@material-ui/core";
+import { Typography, Grid, Box, Fade, Slide } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Typed from "react-typed";
 import wallpaper from "../assets/wallpaper.jpg";
@@ -20,11 +20,6 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: "cover",
     opacity: "0.9",
   },
-  icon: {
-    backgroundColor: "#011051",
-    color: "white",
-    border: ".1em solid white",
-  },
 }));
 
 function Introduction() {
@@ -40,7 +35,7 @@ function Introduction() {
       alignItems="center"
       direction="column"
       lg={10}
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "100vh", position: "relative" }}
       className={classes.container}
     >
       <Box pt={"20%"}>
@@ -59,18 +54,15 @@ function Introduction() {
           )}
         </Typography>
       </Box>
-
       {display && (
-        <Box mt={2}>
-          <Fade in timeout={5000}>
-            <IconButton aria-label="image suivante" className={classes.icon}>
-              <ArrowDownwardIcon
-                color="blue"
-                fontSize="large"
-                variant="contained"
-              />
-            </IconButton>
-          </Fade>
+        <Box style={{ position: "absolute", bottom: 0 }}>
+          <Slide direction="up" in timeout={6000}>
+            <ArrowDownwardIcon
+              color="secondary"
+              fontSize="large"
+              className={classes.icon}
+            />
+          </Slide>
         </Box>
       )}
     </Grid>

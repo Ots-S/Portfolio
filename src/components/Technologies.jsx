@@ -23,9 +23,9 @@ export default function Technology() {
   const [displayTechnos, setDisplayTechnos] = useState(false);
   const [technologies, setTechnologies] = useState([
     { title: "React", level: "70%" },
-    { title: "Java Spring", level: "70%" },
+    { title: "Java Spring", level: "60%" },
     { title: "HTML", level: "80%" },
-    { title: "CSS", level: "80%" },
+    { title: "CSS", level: "75%" },
     { title: "Angular", level: "30%" },
   ]);
 
