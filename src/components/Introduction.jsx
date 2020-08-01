@@ -56,13 +56,13 @@ function Introduction() {
       </Box>
       {display && (
         <Box style={{ position: "absolute", bottom: 0 }}>
-          <Slide direction="up" in timeout={6000}>
+          <Fade in timeout={6000}>
             <ArrowDownwardIcon
               color="secondary"
               fontSize="large"
               className={classes.icon}
             />
-          </Slide>
+          </Fade>
         </Box>
       )}
     </Grid>

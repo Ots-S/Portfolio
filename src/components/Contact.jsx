@@ -50,7 +50,12 @@ export default function Contact() {
     >
       <VisibilitySensor onChange={onChangeTitle}>
         <div
-          style={{ width: "1px", height: "1px", backgroundColor: "white" }}
+          style={{
+            marginTop: "10em",
+            width: "1px",
+            height: "1px",
+            backgroundColor: "white",
+          }}
         ></div>
       </VisibilitySensor>
       {display ? (
@@ -78,10 +83,9 @@ export default function Contact() {
           style={{ width: "1px", height: "1px", backgroundColor: "white" }}
         ></div>
       </VisibilitySensor>
-
       {displayContact && (
-        <Slide direction="up" in timeout={2000}>
-          <Grid container direction="row" justify="space-around" lg={8}>
+        <Grid container direction="row" justify="space-around" lg={8}>
+          <Slide direction="right" in timeout={2500}>
             <a
               href="https://www.linkedin.com/in/s%C3%A9bastien-ots-651106197/"
               target="_blank"
@@ -94,6 +98,8 @@ export default function Contact() {
                 />
               </Button>
             </a>
+          </Slide>
+          <Slide direction="left" in timeout={2500}>
             <a href="https://github.com/Ots-S" target="_blank">
               <Button>
                 <CardMedia
@@ -103,8 +109,8 @@ export default function Contact() {
                 />
               </Button>
             </a>
-          </Grid>
-        </Slide>
+          </Slide>
+        </Grid>
       )}
     </Grid>
   );
