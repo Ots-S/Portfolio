@@ -1,19 +1,6 @@
 import React from "react";
-import linkedinIcon from "../assets/linkedin.jpg";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Card,
-  CardMedia,
-  Grid,
-  Typography,
-  Button,
-  Fade,
-  Dialog,
-  Paper,
-  CardActions,
-  IconButton,
-  Box,
-} from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   container: {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Fade } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Introduction from "./Introduction";
 import Footer from "./Footer";
 import Realisations from "./Realisations";
