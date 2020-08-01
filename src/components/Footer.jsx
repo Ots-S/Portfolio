@@ -16,31 +16,25 @@ import {
 } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  linkedinLogo: {
-    width: "5em",
-  },
   container: {
     backgroundColor: "#166999",
+    height: "4em",
   },
 }));
 
 export default function Footer() {
   const classes = useStyles();
   return (
-    <Grid container justify="space-around" className={classes.container}>
-      <Button>
-        <a
-          href="https://www.linkedin.com/in/s%C3%A9bastien-ots-651106197/"
-          target="_blank"
-        >
-          <CardMedia
-            component="img"
-            image={linkedinIcon}
-            className={classes.linkedinLogo}
-          />
-        </a>
-      </Button>
-      <Typography color="secondary">Sébastien Ots ©2020</Typography>
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      className={classes.container}
+    >
+      <Typography color="secondary" align="center">
+        Sébastien Ots ©2020
+      </Typography>
     </Grid>
   );
 }

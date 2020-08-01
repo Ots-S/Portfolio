@@ -100,9 +100,18 @@ export default function Realisations() {
             presentation={
               "Serjee est une application Web permettant de recevoir des recommandations de bouteilles de vin"
             }
-            technologies={
-              "React Material-UI Axios MobX Développement d'un site dynamique et responsive Reproduction graphique en suivant une maquette Manipulation des données via des appels API"
-            }
+            technologies={[
+              "React",
+              "Material-UI",
+              "Axios",
+              "MobX",
+              "HTML & CSS",
+            ]}
+            realisations={[
+              "Développement d'une application web dynamique et responsive",
+              "Reproduction graphique en suivant une maquette",
+              "Manipulation de données via des appels API",
+            ]}
           />
         </Grid>
         <Grid item lg={6}>
@@ -115,6 +124,20 @@ export default function Realisations() {
             presentation={
               "LEKOL est un projet de carnet de liaison numérique entre les professeurs des écoles et les parents d'élèves."
             }
+            technologies={[
+              "Java",
+              "Spring",
+              "Hibernate",
+              "Thymeleaf",
+              "MySql",
+              "HTML & CSS",
+            ]}
+            realisations={[
+              "Conception et création d'une base de données",
+              "Création d'une API REST",
+              "Création d'une interface d'administration",
+              "Sécurisation par token",
+            ]}
           />
         </Grid>
       </Grid>

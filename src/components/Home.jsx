@@ -4,6 +4,7 @@ import Introduction from "./Introduction";
 import Footer from "./Footer";
 import Realisations from "./Realisations";
 import Technologies from "./Technologies";
+import Contact from "./Contact";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Introduction />
       <Realisations />
       <Technologies />
+      <Contact />
       <Footer />
     </Grid>
   );
